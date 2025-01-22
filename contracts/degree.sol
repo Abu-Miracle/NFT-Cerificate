@@ -51,9 +51,6 @@ contract DegreeToken is ERC721URIStorage {
     }
 
     function updateDegreeMetadata(uint256 tokenId, string memory newMetadataURI) public onlyAdmin {
-        if (ownerOf(tokenId) != msg.sender) {
-            revert NotOwner(msg.sender, tokenId);
-        }
         _setTokenURI(tokenId, newMetadataURI);
     }
 
